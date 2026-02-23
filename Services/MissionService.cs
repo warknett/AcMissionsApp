@@ -41,14 +41,16 @@ namespace AcMissionsApp.Services
             };
         }
 
-        public async Task CreateAsync(string title, string description, string difficulty, string? reward, List<int> factionIds)
+        // 🔥 VERSION CORRIGÉE AVEC LOCATION
+        public async Task CreateAsync(string title, string description, string difficulty, string? reward, string location, List<int> factionIds)
         {
             var mission = new Mission
             {
                 Title = title,
                 Description = description,
                 Difficulty = difficulty,
-                Reward = reward
+                Reward = reward,
+                Location = location
             };
 
             await _missionRepository.AddAsync(mission, factionIds);
@@ -74,4 +76,5 @@ namespace AcMissionsApp.Services
         }
     }
 }
+
 

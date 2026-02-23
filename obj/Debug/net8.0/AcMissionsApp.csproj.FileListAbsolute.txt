@@ -135,3 +135,4 @@ C:\Users\userprf\Desktop\AcMissionsApp\AcMissionsApp\obj\Debug\net8.0\refint\AcM
 C:\Users\userprf\Desktop\AcMissionsApp\AcMissionsApp\obj\Debug\net8.0\AcMissionsApp.pdb
 C:\Users\userprf\Desktop\AcMissionsApp\AcMissionsApp\obj\Debug\net8.0\AcMissionsApp.genruntimeconfig.cache
 C:\Users\userprf\Desktop\AcMissionsApp\AcMissionsApp\obj\Debug\net8.0\ref\AcMissionsApp.dll
+C:\Users\userprf\Desktop\AcMissionsApp\AcMissionsApp\obj\Debug\net8.0\AcMissionsApp.sourcelink.json

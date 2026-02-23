@@ -15,14 +15,14 @@ namespace AcMissionsApp.Controllers
             _factionService = factionService;
         }
 
-        
+        // LISTE DES MISSIONS
         public async Task<IActionResult> All()
         {
             var missions = await _missionService.GetAllAsync();
             return View(missions);
         }
 
-        
+        // DETAILS D'UNE MISSION
         public async Task<IActionResult> Detail(int id)
         {
             var mission = await _missionService.GetDetailAsync(id);
@@ -30,7 +30,7 @@ namespace AcMissionsApp.Controllers
             return View(mission);
         }
 
-        
+        // FORMULAIRE AJOUT
         public async Task<IActionResult> Ajout()
         {
             var factions = await _factionService.GetAllAsync();
@@ -38,9 +38,9 @@ namespace AcMissionsApp.Controllers
             return View();
         }
 
-        
+        // TRAITEMENT AJOUT (CORRIGÉ AVEC LOCATION)
         [HttpPost]
-        public async Task<IActionResult> Ajout(string title, string description, string difficulty, string? reward, List<int> factionIds)
+        public async Task<IActionResult> Ajout(string title, string description, string difficulty, string? reward, string location, List<int> factionIds)
         {
             if (string.IsNullOrWhiteSpace(title) || string.IsNullOrWhiteSpace(description))
             {
@@ -54,11 +54,11 @@ namespace AcMissionsApp.Controllers
                 return View();
             }
 
-            await _missionService.CreateAsync(title, description, difficulty, reward, factionIds);
+            await _missionService.CreateAsync(title, description, difficulty, reward, location, factionIds);
             return RedirectToAction("All");
         }
 
-        
+        // FORMULAIRE MODIFICATION
         public async Task<IActionResult> Modification(int id)
         {
             var mission = await _missionService.GetDetailAsync(id);
@@ -69,7 +69,7 @@ namespace AcMissionsApp.Controllers
             return View(mission);
         }
 
-        
+        // TRAITEMENT MODIFICATION
         [HttpPost]
         public async Task<IActionResult> Modification(int id, string title, string description, string difficulty, string? reward, List<int> factionIds)
         {
@@ -77,19 +77,19 @@ namespace AcMissionsApp.Controllers
             return RedirectToAction("Detail", new { id });
         }
 
-        
+        // SUPPRESSION
         public async Task<IActionResult> Suppression(int id)
         {
             await _missionService.DeleteAsync(id);
             return RedirectToAction("All");
         }
 
-        
+        // FILTRE PAR FACTION (OPTIONNEL)
         public async Task<IActionResult> FiltreFaction(string faction)
         {
-            
-            return RedirectToAction("All"); 
+            return RedirectToAction("All");
         }
     }
 }
+
 
