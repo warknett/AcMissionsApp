@@ -1,0 +1,23 @@
+﻿@model AcMissionsApp.DTOs.MissionDetailDto
+
+<h2>@Model.Title</h2>
+
+<p><strong>Difficulté :</strong> @Model.Difficulty</p>
+<p><strong>Récompense :</strong> @Model.Reward</p>
+
+<h3>Description</h3>
+<p>@Model.Description</p>
+
+<h3>Factions impliquées</h3>
+<ul>
+    @foreach (var f in Model.Factions)
+    {
+        <li>@f</li>
+    }
+</ul>
+
+<a class="btn-ac" href="/Mission/Modification/@Model.Id">Modifier</a>
+<a class="btn-ac" href="/Mission/Suppression/@Model.Id">Supprimer</a>
+<a class="btn-ac" href="/Mission/All">Retour</a>
+
+

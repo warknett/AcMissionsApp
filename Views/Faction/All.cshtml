@@ -1,0 +1,28 @@
+﻿@model List<AcMissionsApp.Models.Faction>
+
+<h2 style="margin-top:20px;">Liste des factions</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Région</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var faction in Model)
+        {
+            <tr>
+                <td>@faction.Name</td>
+                <td>@faction.Region</td>
+                <td>
+                    <a class="btn-ac" href="/Faction/Detail/@faction.Id">Voir</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+

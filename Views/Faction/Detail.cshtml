@@ -1,0 +1,22 @@
+﻿@model AcMissionsApp.Models.Faction
+
+<h2>@Model.Name</h2>
+
+<p><strong>Région :</strong> @Model.Region</p>
+
+<h3 style="margin-top:20px;">Missions associées</h3>
+
+@if (Model.MissionFactions == null || !Model.MissionFactions.Any())
+{
+    <p>Aucune mission associée.</p>
+}
+else
+{
+    <ul>
+        @foreach (var mf in Model.MissionFactions)
+        {
+            <li>@mf.Mission.Title</li>
+        }
+    </ul>
+}
+

@@ -1,0 +1,50 @@
+﻿@model List<AcMissionsApp.DTOs.MissionShortDto>
+
+<h2 style="margin-top:20px;">Liste des missions</h2>
+
+<a class="btn-ac" href="/Mission/Ajout">Créer ta propre mission</a>
+
+<!-- TABLEAU HTML EN HAUT -->
+<h2 style="margin-top:40px;">Tableau des missions</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Titre</th>
+            <th>Difficulté</th>
+            <th>Récompense</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var mission in Model)
+        {
+            <tr>
+                <td>@mission.Title</td>
+                <td>@mission.Difficulty</td>
+                <td>@mission.Reward</td>
+                <td>
+                    <a class="btn-ac" href="/Mission/Detail/@mission.Id">Voir</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<!-- CARTES EN DESSOUS -->
+<div class="flex-container" style="margin-top:40px;">
+    @foreach (var mission in Model)
+    {
+        <div class="mission-card">
+            <h3>@mission.Title</h3>
+            <p><strong>Difficulté :</strong> @mission.Difficulty</p>
+            <p><strong>Récompense :</strong> @mission.Reward</p>
+
+            <a class="btn-ac" href="/Mission/Detail/@mission.Id">Voir la mission</a>
+        </div>
+    }
+</div>
+
+
+
+

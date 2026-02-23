@@ -1,0 +1,36 @@
+﻿@{
+    var factions = ViewBag.Factions as List<AcMissionsApp.DTOs.FactionDetailDto>;
+}
+
+<h2>Créer une mission</h2>
+
+<form method="post">
+
+    <label>Titre :</label><br />
+    <input type="text" name="title" /><br /><br />
+
+    <label>Description :</label><br />
+    <textarea name="description"></textarea><br /><br />
+
+    <label>Difficulté :</label><br />
+    <input type="text" name="difficulty" /><br /><br />
+
+    <label>Récompense :</label><br />
+    <input type="text" name="reward" /><br /><br />
+
+    <label>Factions :</label><br />
+    @foreach (var f in factions)
+    {
+        <div>
+            <input type="checkbox" name="factionIds" value="@f.Id" />
+            @f.Name (@f.Region)
+        </div>
+    }
+
+    <br />
+    <button class="btn-ac" type="submit">Créer la mission</button>
+</form>
+
+<a class="btn-ac" href="/Mission/All">Retour</a>
+
+

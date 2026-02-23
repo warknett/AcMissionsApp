@@ -1,0 +1,18 @@
+﻿@{
+    ViewData["Title"] = "Ajouter une faction";
+}
+
+<h1>Ajouter une faction</h1>
+
+<form method="post">
+    <label>Nom :</label><br />
+    <input type="text" name="name" /><br /><br />
+
+    <label>Région :</label><br />
+    <input type="text" name="region" /><br /><br />
+
+    <button type="submit">Ajouter</button>
+</form>
+
+<a href="@Url.Action("All", "Faction")">Retour</a>
+
