@@ -18,9 +18,7 @@ namespace AcMissionsApp.Data
         {
             base.OnModelCreating(modelBuilder);
 
-            // -----------------------------
-            // RELATION MANY-TO-MANY
-            // -----------------------------
+           
             modelBuilder.Entity<MissionFaction>()
                 .HasOne(mf => mf.Mission)
                 .WithMany(m => m.MissionFactions)
@@ -31,17 +29,14 @@ namespace AcMissionsApp.Data
                 .WithMany(f => f.MissionFactions)
                 .HasForeignKey(mf => mf.FactionId);
 
-            // -----------------------------
-            // SEED : FACTIONS
-            // -----------------------------
+           
+            
             modelBuilder.Entity<Faction>().HasData(
                 new Faction { Id = 1, Name = "Assassins", Region = "Moyen-Orient" },
                 new Faction { Id = 2, Name = "Templiers", Region = "Europe" }
             );
 
-            // -----------------------------
-            // SEED : MISSIONS
-            // -----------------------------
+           
             modelBuilder.Entity<Mission>().HasData(
                 new Mission
                 {
@@ -77,9 +72,7 @@ namespace AcMissionsApp.Data
                 }
             );
 
-            // -----------------------------
-            // SEED : LIENS MANY-TO-MANY
-            // -----------------------------
+           
             modelBuilder.Entity<MissionFaction>().HasData(
                 new MissionFaction { Id = -1, MissionId = 1, FactionId = 1 },
                 new MissionFaction { Id = -2, MissionId = 2, FactionId = 1 },

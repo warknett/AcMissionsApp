@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AcMissionsApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+46d8aa34ddd26363524ac82f0aa05039b66011e1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8317c16232f0d23789a5241300d8c77d25753727")]
 [assembly: System.Reflection.AssemblyProductAttribute("AcMissionsApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AcMissionsApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -38,7 +38,7 @@ namespace AcMissionsApp.Controllers
             return View();
         }
 
-        // TRAITEMENT AJOUT (CORRIGÉ AVEC LOCATION)
+        
         [HttpPost]
         public async Task<IActionResult> Ajout(string title, string description, string difficulty, string? reward, string location, List<int> factionIds)
         {
@@ -84,7 +84,7 @@ namespace AcMissionsApp.Controllers
             return RedirectToAction("All");
         }
 
-        // FILTRE PAR FACTION (OPTIONNEL)
+        
         public async Task<IActionResult> FiltreFaction(string faction)
         {
             return RedirectToAction("All");

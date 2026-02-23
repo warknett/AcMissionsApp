@@ -17,7 +17,7 @@ header {
     border-bottom: 3px solid #b30000;
 }
 
-/* --- AJOUT POUR LE LOGO --- */
+
 .ac-header {
     display: flex;
     align-items: center;
@@ -26,7 +26,7 @@ header {
 }
 
 .ac-logo {
-    height: 60px; /* tu peux changer la taille */
+    height: 60px; 
     width: auto;
 }
 
@@ -36,7 +36,7 @@ header h1 {
     letter-spacing: 2px;
 }
 
-/* Navigation */
+
 nav {
     display: flex;
     justify-content: center;
@@ -112,14 +112,14 @@ table {
         background-color: #330000;
     }
 
-/* Contenu sans marges blanches */
+
 .page-content {
     width: 100%;
     padding: 0;
     margin: 0;
 }
 
-/* Footer Assassin's Creed */
+
 .footer-ac {
     background-color: #1a1a1a;
     border-top: 2px solid #8b0000;

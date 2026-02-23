@@ -10,7 +10,7 @@
 
         public string Difficulty { get; set; } = null!;
 
-        // AJOUT IMPORTANT
+        
         public string Location { get; set; } = null!;
 
         public string? Reward { get; set; }
